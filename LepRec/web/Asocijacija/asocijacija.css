@@ -1,0 +1,191 @@
+p {
+    background-color: red;
+}
+.a {
+    background-color: red;
+    width: 300px;
+    height: 300px;
+}
+.polje_stil {
+    border-radius: 5px;
+/*    border: 2px;*/
+    border-color: black;
+    border-width: medium;
+    background-color: aqua;
+}
+
+
+.grid {
+  display: grid;
+/*  height: 100px;*/
+    grid-template-columns: 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px ;
+    grid-template-rows: 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px;
+    border-color: red;
+    justify-content: center;
+    grid-row-gap: 2px;
+    grid-column-gap: 1px;
+}
+* {
+/*    cursor: pointer;*/
+}
+.A1 {
+    text-align: center;
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: span 1;
+  color: blue;
+  
+}
+.fokus:focus {
+    background-color: aqua;
+    border-color: bisque;
+    cursor: pointer;
+    text-align: center;
+    
+    
+}
+.A2 {
+  grid-column-start: 2;
+  grid-column-end: 4;
+  grid-row-start: 2;
+  grid-row-end: 2;
+  color: blue;
+}
+.A3 {
+  grid-column-start: 3;
+  grid-column-end: 5;
+  grid-row-start: 3;
+  grid-row-end: 3;
+  color: blue;
+}
+.A4 {
+  grid-column-start: 4;
+  grid-column-end: 6;
+  grid-row-start: 4;
+  grid-row-end: 4;
+  color: blue;
+}
+.AF {
+  grid-column-start: 5;
+  grid-column-end: 7;
+  grid-row-start: 5;
+  grid-row-end: 5;
+  color: blue;
+}
+.B1 {
+  grid-column-start: 11;
+  grid-column-end: 13;
+  grid-row-start: 1;
+  grid-row-end: 1;
+  color: blue;
+}
+.B2 {
+  grid-column-start: 10;
+  grid-column-end: 12;
+  grid-row-start: 2;
+  grid-row-end: 2;
+  color: blue;
+}
+.B3 {
+  grid-column-start: 9;
+  grid-column-end: 11;
+  grid-row-start: 3;
+  grid-row-end: 3;
+  color: blue;
+}
+.B4 {
+  grid-column-start: 8;
+  grid-column-end: 10;
+  grid-row-start: 4;
+  grid-row-end: 4;
+  color: blue;
+}
+.BF {
+  grid-column-start: 7;
+  grid-column-end: 9;
+  grid-row-start: 5;
+  grid-row-end: 5;
+  color: red;
+}
+.F1 {
+  grid-column-start: 6;
+  grid-column-end: 8;
+  grid-row-start: 6;
+  grid-row-end: 6;
+  color: blue;
+}
+.C1 {
+  grid-column-start: 4;
+  grid-column-end: 6;
+  grid-row-start: 8;
+  grid-row-end: 8;
+  color: blue;
+}
+.C2 {
+  grid-column-start: 3;
+  grid-column-end: 5;
+  grid-row-start: 9;
+  grid-row-end: 9;
+  color: blue;
+}
+.C3 {
+  grid-column-start: 2;
+  grid-column-end: 4;
+  grid-row-start: 10;
+  grid-row-end: 10;
+  color: blue;
+}
+.C4 {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 11;
+  grid-row-end: 11;
+  color: blue;
+}
+.CF {
+  grid-column-start: 5;
+  grid-column-end: 7;
+  grid-row-start: 7;
+  grid-row-end: 7;
+  color: blue;
+}
+.D1 {
+  grid-column-start: 8;
+  grid-column-end: 10;
+  grid-row-start: 8;
+  grid-row-end: 8;
+  color: blue;
+}
+.D2 {
+  grid-column-start: 9;
+  grid-column-end: 11;
+  grid-row-start: 9;
+  grid-row-end: 9;
+  color: blue;
+}
+.D3 {
+  grid-column-start: 10;
+  grid-column-end: 12;
+  grid-row-start: 10;
+  grid-row-end: 10;
+  color: blue;
+}
+.D4 {
+  grid-column-start: 11;
+  grid-column-end: 13;
+  grid-row-start: 11;
+  grid-row-end: 11;
+  color: blue;
+}
+
+.DF {
+  grid-column-start: 7;
+  grid-column-end: 9;
+  grid-row-start: 7;
+  grid-row-end: 7;
+  color: blue;
+}
+
+
+
