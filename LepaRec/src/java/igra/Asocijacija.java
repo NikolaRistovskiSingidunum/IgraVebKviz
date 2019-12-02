@@ -5,11 +5,13 @@
  */
 package igra;
 
+import javax.servlet.http.HttpServletRequest;
+
 /**
  *
  * @author Nikola
  */
-public class Asocijacija {
+public class Asocijacija extends Level{
     
     private Field[] fields= new Field[16];
     private Field ASolution, BSolution, CSolution, DSolution, WholeSolution;
@@ -40,5 +42,57 @@ public class Asocijacija {
         CSolution = new Field("CSolution", FieldPosition.CSolution);
         DSolution = new Field("DSolution", FieldPosition.DSolution);
         WholeSolution = new Field("WholeSolution", FieldPosition.WholeSolution);
+    }
+
+    public boolean openField(FieldPosition fp)
+    {
+        for (Field f : fields) 
+        {
+            if (f.checkFieldPosition(fp)) 
+            {
+                if (f.isOpened() == false) 
+                {
+                    f.openField();
+                    return true;
+                } else 
+                {
+                    return false;
+                }
+            }
+
+        }
+
+        return false;
+    }
+    @Override
+    public boolean react(HttpServletRequest request, Player currentPlayer) {
+        String key = request.getParameter("open");
+        
+        if( currentPlayer.canPlay() == false)
+            return false;
+        
+        if(key != null )
+        {
+            FieldPosition fp = FieldPosition.valueOf(key);
+            
+            return openField(fp);
+        }
+        
+        return false;
+    }
+
+    @Override
+    public void response(PrimitiveJSON response) {
+        
+        
+        for( Field f: fields)
+        {
+            if(f.isOpened())
+            {
+            String key = f.getKey().toString();
+            String value = f.getValue();
+            response.addKeyValue(key, value);
+            }
+        }
     }
 }

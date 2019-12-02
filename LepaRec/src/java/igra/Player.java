@@ -31,6 +31,21 @@ public class Player {
     
     //svi igraci
     
+    public boolean bCanPlay = false;
+    
+    public boolean playMove()
+    {
+        if( bCanPlay == false)
+        return false;
+        
+        bCanPlay = true;
+        return true;
+    }
+    public boolean canPlay()
+    {
+        return bCanPlay;
+    }
+    
     public static void updateTime(float elapsedTime)
     {
         for (Player p:players)
@@ -51,6 +66,11 @@ public class Player {
      
     public static ArrayList<Player> players = new ArrayList<Player>();
     private String cookie;
+
+    public String getCookie() {
+        return cookie;
+    }
+    
     private Game currentGame;
 
     public Game getCurrentGame() {
@@ -127,15 +147,15 @@ public class Player {
         
         Game currentGame = currentPlayer.getCurrentGame();
         
-        if(currentGame!=null)
-        {
-//            System.out.println("player1" + currentGame.player1.cookie  );
-//            System.out.println("player2" + currentGame.player2.cookie  );
-            output.addKeyValue("player1", currentGame.player1.cookie);
-            output.addKeyValue("player2", currentGame.player2.cookie);
-            output.addKeyValue("time1",Integer.toString((int) (currentGame.player1.time / 1000)));
-            output.addKeyValue("time2",Integer.toString((int) (currentGame.player2.time / 1000))) ;
-        }
+//        if(currentGame!=null)
+//        {
+////            System.out.println("player1" + currentGame.player1.cookie  );
+////            System.out.println("player2" + currentGame.player2.cookie  );
+//            output.addKeyValue("player1", currentGame.player1.cookie);
+//            output.addKeyValue("player2", currentGame.player2.cookie);
+//            output.addKeyValue("time1",Integer.toString((int) (currentGame.player1.time / 1000)));
+//            output.addKeyValue("time2",Integer.toString((int) (currentGame.player2.time / 1000))) ;
+//        }
         
         //Integer testTime
         
@@ -151,7 +171,7 @@ public class Player {
         }
     }
     
-    private static String generateSession()
+    public static String generateSession()
     {
         int n = 32;
         String AlphaNumericString = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"

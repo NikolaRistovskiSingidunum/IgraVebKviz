@@ -23,6 +23,10 @@ public class Field {
     private boolean bOpen = false;
     private String value;
     private FieldPosition key;
+
+    public String getValue() {
+        return value;
+    }
     
     public Field(String value, FieldPosition key)
     {
@@ -35,6 +39,7 @@ public class Field {
     }
     public String openField()
     {
+        
         bOpen = true;
         return value;
     }

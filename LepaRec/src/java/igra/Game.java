@@ -6,6 +6,7 @@
 package igra;
 
 import java.util.ArrayList;
+import javax.servlet.http.HttpServletRequest;
 
 /**
  *
@@ -13,7 +14,26 @@ import java.util.ArrayList;
  */
 public class Game {
     
-    Player player1, player2;
+    private Player player1, player2;
+    
+    private ArrayList<Level> levels = new ArrayList<Level>();
+    
+    private Level currentLevel;
+    public Player getPlayer1() {
+        return player1;
+    }
+
+    public void setPlayer1(Player player1) {
+        this.player1 = player1;
+    }
+
+    public Player getPlayer2() {
+        return player2;
+    }
+
+    public void setPlayer2(Player player2) {
+        this.player2 = player2;
+    }
     
     private static ArrayList<Game> games = new ArrayList<Game>();
     
@@ -63,8 +83,48 @@ public class Game {
                 
         player1.setCurrentGame(this);
         player2.setCurrentGame(this);
+        
+        generateLevels();
+        
+        this.player1.bCanPlay = true;
+        this.player2.bCanPlay = false;
+        
         games.add(this);
     }
     
+    private void generateLevels()
+    {
+        currentLevel = new Asocijacija();
+        levels.add(currentLevel);
+    }
     
+    public boolean react(HttpServletRequest request, Player currentPlayer)
+    {
+        if(currentLevel!=null)
+        {
+            boolean successfulMove = currentLevel.react(request, currentPlayer);
+        
+            if(successfulMove)
+            {
+                currentPlayer.bCanPlay = false;
+                Player opponent = getOpponent(currentPlayer);
+                opponent.bCanPlay = true;
+            }
+        }
+        return false;
+    }
+    private Player getOpponent(Player p1)
+    {
+        if(player1 == p1)
+            return player2;
+        
+        return player1;
+    }
+    public void response(PrimitiveJSON response)
+    {
+        if(currentLevel !=null)
+        {
+            currentLevel.response(response);
+        }
+    }
 }
