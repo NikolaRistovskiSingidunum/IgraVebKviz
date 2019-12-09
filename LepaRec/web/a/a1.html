@@ -1,49 +1,128 @@
+<!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" type="text/css" href="asocijacija.css">
-         <script src="client_code.js"></script> 
-        <script src="level_utils.js"></script> 
+<!--        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>-->
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+        <script>$(document).ready(function () {
+                //alert("jQuery radi")
+            });</script>
+        <link rel="stylesheet" type="text/css" href="css/asocijacija.css">
+        <link rel="stylesheet" type="text/css" href="css/colors.css">
+        <script src="js/client_code.js"></script> 
+        <script src="js/level_utils.js"></script> 
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+
     </head>
-    <body>
-        <div id="demo"> Koji kurac je sada ovo opet adasdsa ssssssss </div>
-        <p > Ovo je neki paragraf</p>
-        <button class="a" onclick="loadDoc()" > Klikni me edasdsasda</button>
-        
-        <button class="" onclick="open_main_line()" > otvori liniju main line</button>
-        
-        <button class="" onclick="test_controller()" > test_controller()</button>
-        <div class="grid">
-            <button id="A1" class="A1 polje_stil" onclick="openField('A1')" > A1 </button>
-            <button id="A2" class="A2 polje_stil" onclick="openField('A2')"> A2</button>
-            <button id="A3" class="A3 polje_stil" onclick="openField('A3')" > A3</button>
-            <button id="A4" class="A4 polje_stil" onclick="openField('A4')" > A4</button>
-            <input id="AF" class="AF fokus"/>
-            <button id="B1" class="B1" onclick="openField('B1')" > B1</button>
-            <button id="B2" class="B2" onclick="openField('B2')" > B2</button>
-            <button id="B3" class="B3" onclick="openField('B3')" > B3</button>
-            <button id="B4" class="B4"onclick="openField('B4')" > B4</button>
-            <input id="BF" class="BF fokus" />
+    <body class="color-grad">
+        <div class="container">
+            <div id="demo"> Koji kurac je sada ovo opet adasdsa ssssssss </div>
 
-            <input class="F1 fokus" />
-
-            <button id="C1" class="C1" onclick="openField('C1')" > C1</button>
-            <button id="C2" class="C2" onclick="openField('C2')" > C2</button>
-            <button id="C3" class="C3" onclick="openField('C3')" > C3</button>
-            <button id="C4" class="C4" onclick="openField('C4')" > C4</button>
-            <input class="CF fokus" />
+            <nav class="navbar navbar-expand-lg navbar-light color-skyblue ">
+  <a class="navbar-brand" href="#">Navbar</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link text-white" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white" href="#">Features</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white" href="#">Pricing</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+      </li>
+    </ul>
+  </div>
+</nav>
             
-            <button id="D1" class="D1" onclick="openField('D1')" > D1</button>
-            <button id="D2" class="D2" onclick="openField('D2')" > D2</button>
-            <button id="D3" class="D3" onclick="openField('D3')" > D3</button>
-            <button id="D4" class="D4" onclick="openField('D4')" > D4</button>
-            <input id="DF" class="DF fokus" />
+            <div class="d-flex ">
+                <div class="mr-auto p-2 round player1">
+                    <div class="card round" style="width: 18rem;">
+                        <img class="card-img-top rounded h-25 w-25" src="img/smile.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Ime igraca</h5>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Rejting</li>
+                            <li class="list-group-item">Vreme</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="p-2 align-items-end round player2">
+                      <div class="card rounded " style="width: 18rem;">
+                        <img class="card-img-top rounded h-50 w-25 justify-content-end align-items-end" src="img/smile.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Ime igraca</h5>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Rejting</li>
+                            <li class="list-group-item">Vreme</li>
+                        </ul>
+                    </div></div>
+            </div>
 
-            
-           
-        </div>
-        
-        <button  onclick="mount_level_1()"> mount level 1</button> 
-        <div class="" id="level">
+            <!--
+                                    <p > Ovo je neki paragraf</p>
+                                    <button class="a" onclick="loadDoc()" > Klikni me edasdsasda</button>
+                        
+                                    <button class="" onclick="open_main_line()" > otvori liniju main line</button>
+                        
+                                    <button class="" onclick="test_controller()" > test_controller()</button>
+                        
+                                    <button class="" onclick="init()" > test main line</button>
+            -->
+
+
+            <button class="" onclick="startMainLine()" > START MAIN LINE</button>
+            <button class="" onclick="updateMainLineUpdateTime(3000)" > UPDATE MAIN LINE</button>
+            <button class="" onclick="wantsToStartGame()" > START THE GAME</button>
+
+
+
+<!--
+            <div class="grid">
+                <button id="A1" class="A1 polje_stil" onclick="openField('A1')" > A1 </button>
+                <button id="A2" class="A2 polje_stil" onclick="openField('A2')"> A2</button>
+                <button id="A3" class="A3 polje_stil" onclick="openField('A3')" > A3</button>
+                <button id="A4" class="A4 polje_stil" onclick="openField('A4')" > A4</button>
+                <input id="AF" class="AF fokus"/>
+                <button id="B1" class="B1" onclick="openField('B1')" > B1</button>
+                <button id="B2" class="B2" onclick="openField('B2')" > B2</button>
+                <button id="B3" class="B3" onclick="openField('B3')" > B3</button>
+                <button id="B4" class="B4"onclick="openField('B4')" > B4</button>
+                <input id="BF" class="BF fokus" />
+
+                <input class="F1 fokus" />
+
+                <button id="C1" class="C1" onclick="openField('C1')" > C1</button>
+                <button id="C2" class="C2" onclick="openField('C2')" > C2</button>
+                <button id="C3" class="C3" onclick="openField('C3')" > C3</button>
+                <button id="C4" class="C4" onclick="openField('C4')" > C4</button>
+                <input class="CF fokus" />
+
+                <button id="D1" class="D1" onclick="openField('D1')" > D1</button>
+                <button id="D2" class="D2" onclick="openField('D2')" > D2</button>
+                <button id="D3" class="D3" onclick="openField('D3')" > D3</button>
+                <button id="D4" class="D4" onclick="openField('D4')" > D4</button>
+                <input id="DF" class="DF fokus" />
+
+
+-->
+
+            </div>
+
+            <button  onclick="mount_level_1()"> mount level 1</button> 
+            <div class="" id="level">
+            </div>
+
         </div>
     </body>
 </html>

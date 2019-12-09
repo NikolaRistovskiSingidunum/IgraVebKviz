@@ -109,11 +109,13 @@ public class Game {
                 currentPlayer.bCanPlay = false;
                 Player opponent = getOpponent(currentPlayer);
                 opponent.bCanPlay = true;
+                opponent.setTime(currentLevel.timeForMove);
+                currentPlayer.setTime(100.0f);
             }
         }
         return false;
     }
-    private Player getOpponent(Player p1)
+    public Player getOpponent(Player p1)
     {
         if(player1 == p1)
             return player2;

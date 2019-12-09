@@ -1,3 +1,19 @@
+.round{
+      border-radius: 25px;
+    background-color: rosybrown;
+
+}
+.body{
+  border-radius: 25px;
+    background-color: rosybrown;
+    
+}
+.player1{
+    background-color: purple;
+}
+.player2{
+    background-color: blue;
+}
 p {
     background-color: red;
 }

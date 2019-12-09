@@ -42,6 +42,19 @@ public class Asocijacija extends Level{
         CSolution = new Field("CSolution", FieldPosition.CSolution);
         DSolution = new Field("DSolution", FieldPosition.DSolution);
         WholeSolution = new Field("WholeSolution", FieldPosition.WholeSolution);
+        
+        levelId = 1;
+        timeForMove = 30*1000; //in ms
+        
+        
+    }
+    
+    public Asocijacija(int levelId)
+    {
+    
+        
+        this.levelId = levelId;
+       
     }
 
     public boolean openField(FieldPosition fp)
@@ -84,6 +97,7 @@ public class Asocijacija extends Level{
     @Override
     public void response(PrimitiveJSON response) {
         
+        response.addKeyValue("levelId", "" + this.levelId);
         
         for( Field f: fields)
         {

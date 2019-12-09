@@ -1,0 +1,48 @@
+.color-blueviolet
+{
+    background-color: blueviolet;
+}
+.color-rosybrown
+{
+background-color: rosybrown;
+}
+
+.color-coral
+{
+background-color: coral;
+}
+.color-darkorchid
+{
+background-color: darkorchid;
+}
+.color-skyblue
+{
+background-color: skyblue;
+}
+.color-firebrick
+{
+background-color: firebrick;
+    color: blue;
+}
+
+.color-forestgreen
+{
+background-color: forestgreen;
+}
+.color-grad {
+
+    background-color: #81e15a;
+/*  background-image: linear-gradient(skyblue, blueviolet);*/
+/*    background-image: radial-gradient(red, yellow, green);*/
+}
+
+.player1Color 
+{
+    background-color: blue;
+    color: white;
+}
+.player2Color 
+{
+    background-color: red;
+    color: white;
+}

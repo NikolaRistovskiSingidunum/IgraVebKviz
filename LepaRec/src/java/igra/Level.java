@@ -17,7 +17,8 @@ public abstract class Level {
    
     
     
-    public float timeForMove;
+    public float timeForMove; // in ms
+    public int levelId;
     //prihvata igracev upit i reaguje na njega
     public abstract boolean react(HttpServletRequest request, Player currentPlayer);
     

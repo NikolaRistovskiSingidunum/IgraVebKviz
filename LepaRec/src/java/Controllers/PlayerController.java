@@ -76,10 +76,13 @@ public class PlayerController extends Controller{
         if (currentGame != null) {
 //            System.out.println("player1" + currentGame.player1.cookie  );
 //            System.out.println("player2" + currentGame.player2.cookie  );
-            outJSON.addKeyValue("player1", currentGame.getPlayer1().getCookie());
-            outJSON.addKeyValue("player2", currentGame.getPlayer2().getCookie());
-            outJSON.addKeyValue("time1", Integer.toString((int) (currentGame.getPlayer1().getTime() / 1000)));
-            outJSON.addKeyValue("time2", Integer.toString((int) (currentGame.getPlayer2().getTime() / 1000)));
+            Player opponent = currentPlayer.getCurrentGame().getOpponent(currentPlayer);
+            outJSON.addKeyValue("player1", currentPlayer.getCookie());
+            outJSON.addKeyValue("player2", opponent.getCookie());
+            outJSON.addKeyValue("p1id", currentPlayer.id);
+            outJSON.addKeyValue("p2id", opponent.id);
+            outJSON.addKeyValue("time1", Integer.toString((int) (currentPlayer.getTime() / 1000.0)));
+            outJSON.addKeyValue("time2", Integer.toString((int) (opponent.getTime() / 1000.0)));
             
             currentGame.response(outJSON);
         }
